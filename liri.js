@@ -26,6 +26,18 @@ switch (command) {
     break;
 };
 
+function concertThis() {
+    request("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp", function (err, response, body) {
+        if (!err && response.statusCode === 200) {
+        var concertInfo = JSON.parse(body);
+        console.log(artist + " concert info:");
+        console.log("Venue: " + concertInfo[i].venue.name);
+        console.log("Location: " + concertInfo[i].venue.city + "," + country);
+        console.log("Date: " + concertInfo[i].datetime);
+        };
+    });
+};
+
 function showSong() {
     var spotify = new Spotify(keys.spotify);
     spotify.search({ type: 'track', query: 'userInput'}, function(err,data) {
@@ -40,8 +52,8 @@ function showSong() {
 };
 
 function showMovie() {
-    request("http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy", function (error, response, body) {
-        if (!error && response.statusCode === 200) {
+    request("http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy", function (err, response, body) {
+        if (!err && response.statusCode === 200) {
             console.log("Title of the Movie: " + JSON.parse(body).Title);
             console.log("Year: " + JSON.parse(body).Year);
             console.log("IMBD Rating: " + JSON.parse(body).imdbRating0;
@@ -53,3 +65,5 @@ function showMovie() {
         };
     });
 };
+
+
