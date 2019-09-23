@@ -42,17 +42,13 @@ function concertThis() {
   );
 }
 
-// var spotifyThisSong = function(song) {
-//   if (!song) {
-//     song = "I Want it That Way";
-//   }
-// };
-
 function showSong() {
- 
   var spotify = new Spotify(keys.spotify);
 
-  spotify.search({ type: "track", query: userInput, limit: 1 }, function(err, data) {
+  spotify.search({ type: "track", query: userInput, limit: 1 }, function(
+    err,
+    data
+  ) {
     if (err) {
       return console.log("Error" + err);
     }
