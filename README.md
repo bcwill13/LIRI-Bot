@@ -7,8 +7,7 @@
 
 <ul>Node.js</ul>
 <ul>Javascript</ul>
-<ul>Node Packages:</ul>
-<br></br>
+<p>Node Packages:</p>
 <ul>Node-Spotify-API</ul>
 <ul>Axios</ul>
 <ul>Moment</ul>
